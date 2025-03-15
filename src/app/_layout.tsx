@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components/native";
 import { Slot } from "expo-router";
 import { baseTheme } from "../common/theme";
 
