@@ -6,16 +6,22 @@ import { Image } from "expo-image";
 import Typo from "@/src/components/Typo";
 import { useTranslation } from "react-i18next";
 import Btn from "@/src/components/Btn";
+import { useRouter } from "expo-router";
+import useKickOff from "@/src/features/auth/hooks/useKickOff";
 
 function KickOffScreen() {
   const { t } = useTranslation();
+  const { replace } = useRouter();
 
   const pagerRef = useRef<PagerView>(null);
   const [phase, setPhase] = useState(2);
   const isLast = phase === 2;
+  const { doneKickOff } = useKickOff();
 
   const handleNext = () => {
     if (isLast) {
+      replace("/auth");
+      doneKickOff();
       return;
     }
 

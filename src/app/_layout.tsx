@@ -1,7 +1,7 @@
 import "@/src/common/i18n";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { baseTheme } from "../common/theme";
 import useTrackingScreen from "../features/core/hooks/useTrackingScreen";
 import { KeyboardProvider } from "react-native-keyboard-controller";
@@ -18,7 +18,11 @@ function RootLayout() {
   return (
     <KeyboardProvider>
       <ThemeProvider theme={baseTheme}>
-        <Slot />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="(app)" />
+          <Stack.Screen name="kick-off" />
+          <Stack.Screen name="auth" />
+        </Stack>
       </ThemeProvider>
     </KeyboardProvider>
   );
