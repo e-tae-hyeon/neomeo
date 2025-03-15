@@ -9,15 +9,17 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.yurang.neomeo"
+      "bundleIdentifier": "com.yurang.neomeo",
+      "googleServicesFile": "./config/GoogleService-Info.plist",
+      "supportsTablet": false
     },
     "android": {
+      "package": "com.yurang.neomeo",
+      "googleServicesFile": "./config/google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.yurang.neomeo"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -39,6 +41,16 @@
         "expo-font",
         {
           "fonts": ["./assets/fonts/NanumGothic.otf"]
+        }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/crashlytics",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
         }
       ]
     ],
