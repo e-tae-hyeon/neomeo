@@ -1,10 +1,7 @@
 import { useStorageObjectWithDefault } from "@/src/common/storage";
 import DateUtil from "@/src/util/DateUtil";
-import { generateId } from "@/src/util/generate-id";
 
 type IProfile = {
-  id: string;
-
   nickname: string;
 
   createdAt: string;
@@ -15,7 +12,6 @@ function useProfile() {
   const KEY = "k_profile";
 
   const defaultProfile: IProfile = {
-    id: generateId(),
     nickname: "",
     createdAt: DateUtil.nowISO(),
     updatedAt: DateUtil.nowISO(),

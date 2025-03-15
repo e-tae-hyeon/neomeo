@@ -10,7 +10,10 @@ function AuthLayout() {
       <Stack.Screen name="kind" />
       <Stack.Screen name="custom" />
       <Stack.Screen name="preview" />
-      <Stack.Screen name="complete" />
+      <Stack.Screen
+        name="complete"
+        options={{ gestureEnabled: false, animation: "fade" }}
+      />
     </Stack>
   );
 }

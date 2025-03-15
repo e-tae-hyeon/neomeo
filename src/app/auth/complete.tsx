@@ -4,17 +4,24 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 import Cloud from "@images/core/cloud.svg";
-import PopoWelcome from "@images/core/popo-welcome.svg";
+import PopoComplete from "@images/core/popo-complete.svg";
 import Typo from "@/src/components/Typo";
 import { ScrollView } from "react-native";
 import { useRouter } from "expo-router";
+import usePet from "@/src/features/me/hooks/usePet";
+import useAuth from "@/src/features/auth/hooks/useAuth";
 
-function AuthScreen() {
+function AuthCompleteScreen() {
   const { t } = useTranslation();
   const { navigate } = useRouter();
 
-  const handleNext = () => {
-    navigate("/auth/name");
+  const { pet } = usePet();
+  const { register } = useAuth();
+
+  const handleDone = () => {
+    register();
+
+    navigate("/");
   };
 
   return (
@@ -26,23 +33,23 @@ function AuthScreen() {
 
         <Main>
           <Body>
-            <Guide>{t("auth.start.content")}</Guide>
+            <Guide>{t("auth.complete.content", { name: pet.name })}</Guide>
           </Body>
 
           <PopoSection>
-            <PopoWelcome />
+            <PopoComplete />
           </PopoSection>
         </Main>
       </ScrollView>
 
       <Footer>
-        <Btn onPress={handleNext}>{t("auth.start.go")}</Btn>
+        <Btn onPress={handleDone}>{t("auth.complete.goHome")}</Btn>
       </Footer>
     </Screen>
   );
 }
 
-export default AuthScreen;
+export default AuthCompleteScreen;
 
 const Screen = styled(Layout.Screen)``;
 
