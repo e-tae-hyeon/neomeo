@@ -4,12 +4,14 @@ import Layout from "./Layout";
 import { useRouter } from "expo-router";
 import { TouchableOpacity } from "react-native";
 import { IconArrowLeft } from "@tabler/icons-react-native";
+import Typo from "./Typo";
 
 type Props = {
+  title?: string;
   onBack?: () => void;
 };
 
-function HeaderArrow({ onBack }: Props) {
+function HeaderArrow({ title, onBack }: Props) {
   const theme = useTheme();
   const { back } = useRouter();
 
@@ -27,6 +29,8 @@ function HeaderArrow({ onBack }: Props) {
       <TouchableOpacity onPress={handleBack} hitSlop={12}>
         <IconArrowLeft color={theme.system.text100} />
       </TouchableOpacity>
+
+      {title && <Title>{title}</Title>}
     </Root>
   );
 }
@@ -38,5 +42,8 @@ const Header = {
 export default Header;
 
 const Root = styled(Layout.Row)`
+  gap: 8px;
   padding: 16px 20px;
 `;
+
+const Title = styled(Typo.H3)``;

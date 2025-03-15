@@ -1,6 +1,6 @@
 import useAuth from "@/src/features/auth/hooks/useAuth";
 import useKickOff from "@/src/features/auth/hooks/useKickOff";
-import { Redirect, Slot } from "expo-router";
+import { Redirect, Slot, Stack } from "expo-router";
 import React from "react";
 
 function AppLayout() {
@@ -11,7 +11,12 @@ function AppLayout() {
 
   if (!userId) return <Redirect href={"/auth"} />;
 
-  return <Slot />;
+  return (
+    <Stack screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="(@tabs)" />
+      <Stack.Screen name="settings" />
+    </Stack>
+  );
 }
 
 export default AppLayout;
