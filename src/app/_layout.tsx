@@ -1,3 +1,4 @@
+import "@/src/common/i18n";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { Slot } from "expo-router";
