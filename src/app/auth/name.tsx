@@ -73,7 +73,7 @@ const Background = styled(Layout.Center)`
 const Main = styled.View`
   gap: 20px;
   padding: 20px;
-  padding-top: 100px;
+  padding-top: 80px;
 `;
 
 const Form = styled.View``;

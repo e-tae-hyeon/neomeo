@@ -8,7 +8,6 @@ import { ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import Header from "@/src/components/Header";
 import Btn from "@/src/components/Btn";
-import usePet from "@/src/features/me/hooks/usePet";
 import Input from "@/src/components/Input";
 import useProfile from "@/src/features/auth/hooks/useProfile";
 
@@ -74,7 +73,7 @@ const Background = styled(Layout.Center)`
 const Main = styled.View`
   gap: 20px;
   padding: 20px;
-  padding-top: 100px;
+  padding-top: 80px;
 `;
 
 const Form = styled.View``;

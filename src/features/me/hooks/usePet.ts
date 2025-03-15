@@ -3,9 +3,11 @@ import DateUtil from "@/src/util/DateUtil";
 
 export type IPetKind = "dog" | "cat";
 
+export const petKinds: IPetKind[] = ["dog", "cat"];
+
 export type IPet = {
   name: string;
-  kind: IPetKind;
+  kind?: IPetKind;
 
   createdAt: string;
   updatedAt: string;
@@ -16,7 +18,6 @@ function usePet() {
 
   const defaultPet: IPet = {
     name: "",
-    kind: "cat",
     createdAt: DateUtil.nowISO(),
     updatedAt: DateUtil.nowISO(),
   };
