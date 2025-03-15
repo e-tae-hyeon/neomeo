@@ -1,4 +1,4 @@
-export type SystemColor = {
+export type SystemColors = {
   white: string;
   black: string;
   background: string;
@@ -12,8 +12,23 @@ export type SystemColor = {
   sub: string;
 };
 
+type GrayColors = {
+  gray50: string;
+  gray100: string;
+  gray150: string;
+  gray200: string;
+  gray300: string;
+  gray400: string;
+  gray500: string;
+  gray600: string;
+  gray700: string;
+  gray800: string;
+  gray900: string;
+};
+
 export type AppTheme = {
-  system: SystemColor;
+  system: SystemColors;
+  gray: GrayColors;
 };
 
 export const baseTheme: AppTheme = {
@@ -29,5 +44,18 @@ export const baseTheme: AppTheme = {
     text4: "#1717170A",
     main: "#8FA9EA",
     sub: "#BDC9F2",
+  },
+  gray: {
+    gray50: "#fafafa",
+    gray100: "#f5f5f5",
+    gray150: "#ededed",
+    gray200: "#e5e5e5",
+    gray300: "#d4d4d4",
+    gray400: "#a3a3a3",
+    gray500: "#737373",
+    gray600: "#525252",
+    gray700: "#404040",
+    gray800: "#262626",
+    gray900: "#171717",
   },
 };
