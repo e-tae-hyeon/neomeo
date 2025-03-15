@@ -47,7 +47,7 @@ const H4 = styled(Bold)`
 `;
 
 const Label = styled(Bold)`
-  font-size: 15px;
+  font-size: 16px;
 `;
 
 const B1 = styled(Medium)`
