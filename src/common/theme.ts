@@ -1,6 +1,7 @@
 export type SystemColor = {
   white: string;
   black: string;
+  background: string;
   text100: string;
   text80: string;
   text60: string;
@@ -19,6 +20,7 @@ export const baseTheme: AppTheme = {
   system: {
     white: "#fffff6",
     black: "#000000",
+    background: "#9AA9DB",
     text100: "#171717",
     text80: "#171717CC",
     text60: "#17171799",
