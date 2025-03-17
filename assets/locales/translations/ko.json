@@ -8,7 +8,8 @@
         "prev": "이전",
         "next": "다음",
         "start": "시작하기",
-        "edit": "수정"
+        "edit": "수정",
+        "done": "완료"
       }
     },
     "core": {
@@ -67,7 +68,14 @@
       "diary": "털어놓기"
     },
     "letter": {
-      "letter": "편지쓰기"
+      "letter": "편지쓰기",
+      "write": {
+        "placeholder": "내용을 입력해주세요."
+      },
+      "sealing": {
+        "label": "편지를 밀봉할 도장을 선택해주세요."
+      },
+      "complete": "진심을 다해 편지를 적어 주셔서 감사해요!\n편지는 기차에 타고 있는 {{name}}에게\n소중하게 전달될 거예요. "
     },
     "settings": {
       "settings": "설정",
