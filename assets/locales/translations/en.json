@@ -60,7 +60,7 @@
     "settings": {
       "settings": "설정",
       "locale": {
-        "label": "언어",
+        "label": "Locale",
         "options": {
           "ko": "한국어",
           "en": "English",

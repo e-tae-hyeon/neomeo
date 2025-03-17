@@ -3,7 +3,7 @@ import Layout from "@/src/components/Layout";
 import React from "react";
 import styled from "styled-components/native";
 
-function PetCustomScreen() {
+function SettingsPetCustomScreen() {
   return (
     <Screen>
       <Header.Arrow />
@@ -11,6 +11,6 @@ function PetCustomScreen() {
   );
 }
 
-export default PetCustomScreen;
+export default SettingsPetCustomScreen;
 
 const Screen = styled(Layout.Screen)``;

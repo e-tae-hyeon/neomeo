@@ -32,8 +32,7 @@
         "expo-splash-screen",
         {
           "image": "./assets/images/splash.png",
-          "imageWidth": 800,
-          "resizeMode": "cover"
+          "imageWidth": 900
         }
       ],
       [
@@ -51,7 +50,8 @@
             "useFrameworks": "static"
           }
         }
-      ]
+      ],
+      "expo-localization"
     ],
     "experiments": {
       "typedRoutes": true

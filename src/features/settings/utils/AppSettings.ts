@@ -1,4 +1,5 @@
 import instance from "@/src/common/storage";
+import { getAppLocale, Locale } from "./Locale";
 
 export type IAppSettings = {
   general: IAppSettingsGeneral;
@@ -6,7 +7,7 @@ export type IAppSettings = {
 };
 
 export type IAppSettingsGeneral = {
-  locale: any;
+  locale: Locale;
 };
 
 export type IAppSettingsNoti = {
@@ -16,7 +17,7 @@ export type IAppSettingsNoti = {
 class _AppSettings {
   key = "k_app_settings";
   default: IAppSettings = {
-    general: { locale: "" },
+    general: { locale: getAppLocale() },
     noti: { question: true },
   };
 
