@@ -57,6 +57,18 @@
         "goHome": "홈으로 가기"
       }
     },
+    "home": {
+      "home": "홈"
+    },
+    "question": {
+      "question": "질의응답"
+    },
+    "diary": {
+      "diary": "털어놓기"
+    },
+    "letter": {
+      "letter": "편지쓰기"
+    },
     "settings": {
       "settings": "설정",
       "locale": {
