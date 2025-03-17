@@ -10,6 +10,7 @@ export type SystemColors = {
   text4: string;
   main: string;
   sub: string;
+  negative: string;
 };
 
 type GrayColors = {
@@ -44,6 +45,7 @@ export const baseTheme: AppTheme = {
     text4: "#1717170A",
     main: "#8FA9EA",
     sub: "#BDC9F2",
+    negative: "#dc2626",
   },
   gray: {
     gray50: "#fafafa",

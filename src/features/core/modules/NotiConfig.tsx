@@ -30,13 +30,9 @@ function NotiPermissionModal() {
 
   return (
     <Root>
-      <Body>
-        <Title>{t("core.noti.permission.title")}</Title>
-      </Body>
+      <Title>{t("core.noti.permission.title")}</Title>
 
-      <Footer>
-        <DualBtn onCancel={() => hide()} onConfirm={handleConfirm} />
-      </Footer>
+      <DualBtn onCancel={() => hide()} onConfirm={handleConfirm} />
     </Root>
   );
 }
@@ -64,19 +60,12 @@ export default React.memo(NotiConfig);
 
 const Root = styled.View`
   overflow: hidden;
-  border-radius: 16px;
-  background-color: ${(props) => props.theme.system.white};
-`;
-
-const Body = styled.View`
-  padding: 24px;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 24px;
+  background-color: ${(props) => props.theme.system.background};
 `;
 
 const Title = styled(Typo.H4)`
   text-align: center;
-`;
-
-const Footer = styled.View`
-  padding: 20px;
-  background-color: ${(props) => props.theme.system.main};
 `;

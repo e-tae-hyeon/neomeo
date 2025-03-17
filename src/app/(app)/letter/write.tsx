@@ -1,12 +1,13 @@
 import DualBtn from "@/src/components/DualBtn";
 import Layout from "@/src/components/Layout";
 import Typo from "@/src/components/Typo";
+import useDialog from "@/src/features/core/hooks/useDialog";
 import useModal from "@/src/features/core/hooks/useModal";
 import LetterSealingWaxSelector from "@/src/features/letter/modules/LetterSealingWaxSelector";
 import usePet from "@/src/features/me/hooks/usePet";
 import { applyOpacity } from "@/src/util/apply-opacity";
 import { Image } from "expo-image";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
@@ -16,10 +17,24 @@ function WriteLetterScreen() {
   const { t } = useTranslation();
   const { back } = useRouter();
   const { showModal } = useModal();
+  const { showDialog } = useDialog();
 
   const { pet } = usePet();
 
   const [content, setContent] = useState("");
+
+  const handleCancel = () => {
+    if (!content) {
+      back();
+      return;
+    }
+
+    showDialog({
+      title: t("common.view.cancel.title"),
+      desc: t("common.view.cancel.desc"),
+      onConfirm: back,
+    });
+  };
 
   const handleConfirm = () => {
     showModal(LetterSealingWaxSelector, { position: "bottom" });
@@ -60,7 +75,7 @@ function WriteLetterScreen() {
       <Footer>
         <DualBtn
           confirmLabel={t("common.action.next")}
-          onCancel={() => back()}
+          onCancel={handleCancel}
           onConfirm={handleConfirm}
         />
       </Footer>
