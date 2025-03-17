@@ -45,6 +45,4 @@ const Body = styled.View`
 
 const Title = styled(Typo.H3)``;
 
-const Desc = styled(Typo.Label)`
-  font-size: 14px;
-`;
+const Desc = styled(Typo.B3)``;

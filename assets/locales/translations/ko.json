@@ -9,12 +9,18 @@
         "next": "다음",
         "start": "시작하기",
         "edit": "수정",
-        "done": "완료"
+        "done": "완료",
+        "save": "저장"
       },
       "view": {
         "cancel": {
           "title": "작성을 취소할까요?",
           "desc": "*취소 시 작성된 내용은 모두 지워집니다."
+        },
+        "earth": "지구별",
+        "star": {
+          "dog": "강아지별",
+          "cat": "고양이별"
         }
       }
     },
@@ -68,7 +74,18 @@
       "home": "홈"
     },
     "question": {
-      "question": "질의응답"
+      "question": "질의응답",
+      "remain": "{{star}} 도착까지 {{count}}개의 질문이 남았습니다.",
+      "viewAll": "기존 답변 보기",
+      "signpost": "{{count}}번째 정거장",
+      "write": {
+        "label": "답변 작성하기",
+        "placeholder": "내용을 입력해주세요.",
+        "complete": {
+          "title": "작성하신 답변을 저장할까요?"
+        }
+      },
+      "complete": "답변 덕에 기차는 다음 역으로 출발했어요!\n이어서 솔직한 마음을 털어놓고\n진심을 담은 편지도 써 볼까요?"
     },
     "diary": {
       "diary": "털어놓기",
