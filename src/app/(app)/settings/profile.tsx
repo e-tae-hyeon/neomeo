@@ -1,25 +1,25 @@
 import Header from "@/src/components/Header";
 import Layout from "@/src/components/Layout";
-import SettingsNavigator from "@/src/features/settings/modules/SettingsNavigator";
+import SettingsProfile from "@/src/features/settings/modules/SettingsProfile";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ScrollView } from "react-native";
 import styled from "styled-components/native";
 
-function SettingsScreen() {
+function ProfileScreen() {
   const { t } = useTranslation();
 
   return (
     <Screen>
-      <Header.Arrow title={t("settings.settings")} />
+      <Header.Arrow title={t("settings.profile.label")} />
 
       <ScrollView>
-        <SettingsNavigator />
+        <SettingsProfile />
       </ScrollView>
     </Screen>
   );
 }
 
-export default SettingsScreen;
+export default ProfileScreen;
 
 const Screen = styled(Layout.Screen)``;

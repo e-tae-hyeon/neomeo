@@ -42,7 +42,7 @@ const Header = {
 export default Header;
 
 const Root = styled(Layout.Row)`
-  gap: 8px;
+  gap: 12px;
   padding: 16px 20px;
 `;
 

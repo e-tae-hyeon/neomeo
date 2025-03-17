@@ -44,6 +44,7 @@ function AuthProfileScreen() {
               value={nickname}
               onChangeText={setNickname}
               onClear={() => setNickname("")}
+              maxLength={10}
             />
 
             <Caption>{t("auth.profile.name.caption")}</Caption>

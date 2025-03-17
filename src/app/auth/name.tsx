@@ -44,6 +44,7 @@ function PetNameScreen() {
               value={name}
               onChangeText={setName}
               onClear={() => setName("")}
+              maxLength={10}
             />
 
             <Caption>{t("auth.pet.name.caption")}</Caption>
