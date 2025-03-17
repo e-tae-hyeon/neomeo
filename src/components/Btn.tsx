@@ -35,7 +35,7 @@ const Root = styled.TouchableOpacity<{ bgColor: string }>`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 16px 20px;
   border-radius: 16px;
   opacity: ${(props) => (props.disabled ? 0.4 : 1)};
   background-color: ${(props) => props.bgColor};

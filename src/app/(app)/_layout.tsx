@@ -14,6 +14,7 @@ function AppLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
       <Stack.Screen name="(@tabs)" />
+      <Stack.Screen name="diary" options={{ gestureEnabled: false }} />
       <Stack.Screen name="letter" options={{ gestureEnabled: false }} />
       <Stack.Screen name="settings" />
     </Stack>

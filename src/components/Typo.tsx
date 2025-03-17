@@ -9,14 +9,6 @@ const Bold = styled.Text.attrs({
   font-weight: 700;
 `;
 
-const Medium = styled.Text.attrs({
-  lineBreakStrategyIOS: "hangul-word",
-  textBreakStrategy: "balanced",
-})`
-  color: ${(props) => props.theme.system.text100};
-  font-family: "NanumGothic";
-  font-weight: 500;
-`;
 const Regular = styled.Text.attrs({
   lineBreakStrategyIOS: "hangul-word",
   textBreakStrategy: "balanced",
@@ -50,19 +42,19 @@ const Label = styled(Bold)`
   font-size: 16px;
 `;
 
-const B1 = styled(Medium)`
+const B1 = styled(Regular)`
   font-size: 16px;
 `;
 
-const B2 = styled(Medium)`
+const B2 = styled(Regular)`
   font-size: 15px;
 `;
 
-const B3 = styled(Medium)`
+const B3 = styled(Regular)`
   font-size: 14px;
 `;
 
-const B4 = styled(Medium)`
+const B4 = styled(Regular)`
   font-size: 13px;
 `;
 

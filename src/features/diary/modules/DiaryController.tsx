@@ -2,35 +2,32 @@ import Typo from "@/src/components/Typo";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import usePet from "../../me/hooks/usePet";
 import Btn from "@/src/components/Btn";
 import { useRouter } from "expo-router";
 
-function LetterController() {
+function DiaryController() {
   const { t } = useTranslation();
   const { navigate } = useRouter();
 
-  const { pet } = usePet();
-
   const handleWrite = () => {
-    navigate("/letter/write");
+    navigate("/diary/write");
   };
 
   return (
     <Root>
       <Body>
-        <Title>{t("letter.letter")}</Title>
-        <Desc>To. {pet.name}</Desc>
+        <Title>{t("diary.title")}</Title>
+        <Desc>{t("diary.desc")}</Desc>
       </Body>
 
       <Btn onPress={handleWrite} weight="secondary">
-        {t("letter.letter")}
+        {t("diary.go")}
       </Btn>
     </Root>
   );
 }
 
-export default LetterController;
+export default DiaryController;
 
 const Root = styled.View`
   gap: 24px;
@@ -45,6 +42,4 @@ const Body = styled.View`
 
 const Title = styled(Typo.H3)``;
 
-const Desc = styled(Typo.Label)`
-  font-size: 14px;
-`;
+const Desc = styled(Typo.B3)``;
