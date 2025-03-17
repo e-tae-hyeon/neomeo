@@ -5,7 +5,7 @@ export type IQuestionReply = {
   order: number;
 
   content: string;
-  image: any;
+  imageUri?: string | null;
 
   createdAt: string;
   updatedAt: string;
@@ -20,8 +20,12 @@ function useQuestionReply() {
 
   const getReplyByOrder = (order: number) => orderReplyMap[order];
 
-  const upsertReply = (by: { order: number; content: string }) => {
-    const { order, content } = by;
+  const upsertReply = (by: {
+    order: number;
+    content: string;
+    imageUri?: string | null;
+  }) => {
+    const { order, content, imageUri } = by;
 
     const prev = getReplyByOrder(order);
 
@@ -30,7 +34,7 @@ function useQuestionReply() {
       ...prev,
       order,
       content,
-      image: "",
+      imageUri,
       updatedAt: DateUtil.nowISO(),
     };
 

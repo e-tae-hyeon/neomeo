@@ -1,5 +1,6 @@
 import Layout from "@/src/components/Layout";
 import Typo from "@/src/components/Typo";
+import useQuestionOrder from "@/src/features/question/hooks/useQuestionOrder";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import React, { useEffect } from "react";
@@ -7,16 +8,17 @@ import { useTranslation } from "react-i18next";
 import Animated, { FadeIn } from "react-native-reanimated";
 import styled from "styled-components/native";
 
-function CompleteDiaryScreen() {
+function CompleteQuestionScreen() {
+  const order = useQuestionOrder();
   const { t } = useTranslation();
-  const { dismissTo } = useRouter();
+  const { replace } = useRouter();
 
   const CONTENT_DELAY = 750;
   const TOTAL_DELAY = CONTENT_DELAY + 1750;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      dismissTo("/diary");
+      replace({ pathname: "/question/[order]", params: { order } });
     }, TOTAL_DELAY);
 
     return () => clearTimeout(timer);
@@ -26,21 +28,21 @@ function CompleteDiaryScreen() {
     <Screen>
       <Background entering={FadeIn}>
         <Image
-          source={require("@images/core/diary-complete.png")}
+          source={require("@images/core/question-complete.png")}
           style={{ flex: 1 }}
         />
       </Background>
 
       <Main>
         <ContentSection entering={FadeIn.delay(CONTENT_DELAY)}>
-          <Content>{t("diary.complete")}</Content>
+          <Content>{t("question.complete")}</Content>
         </ContentSection>
       </Main>
     </Screen>
   );
 }
 
-export default CompleteDiaryScreen;
+export default CompleteQuestionScreen;
 
 const Screen = styled(Layout.Screen)``;
 
