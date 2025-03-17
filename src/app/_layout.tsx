@@ -6,6 +6,9 @@ import { baseTheme } from "../common/theme";
 import useTrackingScreen from "../features/core/hooks/useTrackingScreen";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import * as SplashScreen from "expo-splash-screen";
+import BootConfig from "../features/core/modules/BootConfig";
+import { MagicModalPortal } from "react-native-magic-modal";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 SplashScreen.setOptions({
   duration: 600,
@@ -16,15 +19,19 @@ function RootLayout() {
   useTrackingScreen();
 
   return (
-    <KeyboardProvider>
-      <ThemeProvider theme={baseTheme}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="(app)" />
-          <Stack.Screen name="kick-off" />
-          <Stack.Screen name="auth" />
-        </Stack>
-      </ThemeProvider>
-    </KeyboardProvider>
+    <GestureHandlerRootView>
+      <KeyboardProvider>
+        <ThemeProvider theme={baseTheme}>
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="(app)" />
+            <Stack.Screen name="kick-off" />
+            <Stack.Screen name="auth" />
+          </Stack>
+          <BootConfig />
+          <MagicModalPortal />
+        </ThemeProvider>
+      </KeyboardProvider>
+    </GestureHandlerRootView>
   );
 }
 

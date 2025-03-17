@@ -20,7 +20,7 @@ function DualBtn({ cancelLabel, confirmLabel, onCancel, onConfirm }: Props) {
         <Label>{cancelLabel ?? t("common.action.cancel")}</Label>
       </CancelBtn>
 
-      <ConfirmBtn>
+      <ConfirmBtn onPress={onConfirm}>
         <Label>{confirmLabel ?? t("common.action.confirm")}</Label>
       </ConfirmBtn>
     </Root>

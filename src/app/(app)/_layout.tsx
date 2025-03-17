@@ -1,6 +1,6 @@
 import useAuth from "@/src/features/auth/hooks/useAuth";
 import useKickOff from "@/src/features/auth/hooks/useKickOff";
-import { Redirect, Slot, Stack } from "expo-router";
+import { Redirect, Stack } from "expo-router";
 import React from "react";
 
 function AppLayout() {
