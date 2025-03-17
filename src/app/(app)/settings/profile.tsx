@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { ScrollView } from "react-native";
 import styled from "styled-components/native";
 
-function ProfileScreen() {
+function SettingsProfileScreen() {
   const { t } = useTranslation();
 
   return (
@@ -20,6 +20,6 @@ function ProfileScreen() {
   );
 }
 
-export default ProfileScreen;
+export default SettingsProfileScreen;
 
 const Screen = styled(Layout.Screen)``;
