@@ -5,10 +5,10 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
 
 type Props = {
-  count: number;
+  order: number;
 };
 
-function QuestionSignpost({ count }: Props) {
+function QuestionSignpost({ order }: Props) {
   const { t } = useTranslation();
 
   return (
@@ -18,7 +18,7 @@ function QuestionSignpost({ count }: Props) {
       </BeltContainer>
 
       <Post>
-        <Content>{t("question.signpost", { count })}</Content>
+        <Content>{t("question.signpost", { count: order })}</Content>
       </Post>
     </Root>
   );

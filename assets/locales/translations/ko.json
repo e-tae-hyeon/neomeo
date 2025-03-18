@@ -21,7 +21,8 @@
         "star": {
           "dog": "강아지별",
           "cat": "고양이별"
-        }
+        },
+        "memory": "{{name}}의 추억"
       }
     },
     "core": {
@@ -75,6 +76,7 @@
     },
     "question": {
       "question": "질의응답",
+      "placeholder": "아직 작성된 답변이 없어요.",
       "remain": "{{star}} 도착까지 {{count}}개의 질문이 남았습니다.",
       "viewAll": "기존 답변 보기",
       "signpost": "{{count}}번째 정거장",

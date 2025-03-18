@@ -9,9 +9,10 @@ import Typo from "./Typo";
 type Props = {
   title?: string;
   onBack?: () => void;
+  right?: React.ReactNode;
 };
 
-function HeaderArrow({ title, onBack }: Props) {
+function HeaderArrow({ title, onBack, right }: Props) {
   const theme = useTheme();
   const { back } = useRouter();
 
@@ -26,11 +27,15 @@ function HeaderArrow({ title, onBack }: Props) {
 
   return (
     <Root>
-      <TouchableOpacity onPress={handleBack} hitSlop={12}>
-        <IconArrowLeft color={theme.system.text100} />
-      </TouchableOpacity>
+      <Left>
+        <TouchableOpacity onPress={handleBack} hitSlop={12}>
+          <IconArrowLeft color={theme.system.text100} />
+        </TouchableOpacity>
 
-      {title && <Title>{title}</Title>}
+        {title && <Title>{title}</Title>}
+      </Left>
+
+      <Right>{right}</Right>
     </Root>
   );
 }
@@ -42,8 +47,14 @@ const Header = {
 export default Header;
 
 const Root = styled(Layout.Row)`
-  gap: 12px;
+  justify-content: space-between;
   padding: 16px 20px;
 `;
 
+const Left = styled(Layout.Row)`
+  gap: 12px;
+`;
+
 const Title = styled(Typo.H3)``;
+
+const Right = styled(Layout.Row)``;
