@@ -2,7 +2,7 @@ import {
   useStorageNumber,
   useStorageObjectWithDefault,
 } from "@/src/common/storage";
-import { QUESTIONS } from "../common/quetion";
+import { QUESTIONS } from "../common/question";
 import useSettingsStore from "../../settings/stores/useSettingsStore";
 import DateUtil from "@/src/util/DateUtil";
 

@@ -7,7 +7,7 @@ import { useRouter } from "expo-router";
 import Layout from "@/src/components/Layout";
 import { IconCaretRightFilled } from "@tabler/icons-react-native";
 import useTodayQuestion from "../hooks/useTodayQuestion";
-import { QUESTIONS_SIZE } from "../common/quetion";
+import { QUESTIONS_SIZE } from "../common/question";
 import useQuestions from "../hooks/useQuestions";
 
 function QuestionController() {

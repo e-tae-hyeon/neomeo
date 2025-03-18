@@ -7,7 +7,7 @@ import Layout from "@/src/components/Layout";
 import Typo from "@/src/components/Typo";
 import { useTranslation } from "react-i18next";
 import usePet from "../../me/hooks/usePet";
-import { QUESTIONS_SIZE } from "../common/quetion";
+import { QUESTIONS_SIZE } from "../common/question";
 import QuestionNotOpenedItem from "./QuetionNotOpenedItem";
 
 function QuestionList() {
