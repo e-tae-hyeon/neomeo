@@ -29,7 +29,9 @@ function ReplyQuestionScreen() {
   const reply = getReplyByOrder(order);
 
   const [content, setContent] = useState(reply?.content ?? "");
-  const [imageUri, setImageUri] = useState<string | null>(null);
+  const [imageUri, setImageUri] = useState<string | null>(
+    reply?.imageUri ?? null
+  );
 
   const handlePressImage = async () => {
     try {
@@ -74,7 +76,7 @@ function ReplyQuestionScreen() {
   return (
     <Screen>
       <Header>
-        <QuestionSignpost count={order} />
+        <QuestionSignpost order={order} />
       </Header>
 
       <KeyboardAwareScrollView>

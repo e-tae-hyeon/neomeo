@@ -11,14 +11,14 @@ import styled from "styled-components/native";
 function CompleteQuestionScreen() {
   const order = useQuestionOrder();
   const { t } = useTranslation();
-  const { replace } = useRouter();
+  const { dismissTo } = useRouter();
 
   const CONTENT_DELAY = 750;
   const TOTAL_DELAY = CONTENT_DELAY + 1750;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      replace({ pathname: "/question/[order]", params: { order } });
+      dismissTo({ pathname: "/question/[order]", params: { order } });
     }, TOTAL_DELAY);
 
     return () => clearTimeout(timer);
