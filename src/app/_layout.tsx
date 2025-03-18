@@ -1,7 +1,7 @@
 import "@/src/common/i18n";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
-import { Stack, useNavigation } from "expo-router";
+import { Stack } from "expo-router";
 import { baseTheme } from "../common/theme";
 import useTrackingScreen from "../features/core/hooks/useTrackingScreen";
 import { KeyboardProvider } from "react-native-keyboard-controller";
