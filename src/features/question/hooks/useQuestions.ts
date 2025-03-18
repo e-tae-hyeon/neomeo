@@ -2,7 +2,7 @@ import {
   useStorageNumber,
   useStorageObjectWithDefault,
 } from "@/src/common/storage";
-import { QUESTIONS } from "../common/question";
+import { QUESTIONS, QUESTIONS_SIZE } from "../common/question";
 import useSettingsStore from "../../settings/stores/useSettingsStore";
 import DateUtil from "@/src/util/DateUtil";
 
@@ -26,14 +26,14 @@ function useQuestions() {
   const [openedQuestionDateMap, setOpenedQuestionDateMap] =
     useStorageObjectWithDefault<Record<number, string>>(
       "k_opened_question_date",
-      {}
+      { 1: DateUtil.nowISO() }
     );
 
   const questions: IQuestion[] = QUESTIONS[locale]
     .slice(0, openedQuestionOrder)
     .map((content, idx) => {
       const order = idx + 1;
-      const createdAt = openedQuestionDateMap[order] ?? DateUtil.nowISO();
+      const createdAt = openedQuestionDateMap[order];
 
       return {
         order,
@@ -47,6 +47,7 @@ function useQuestions() {
 
   const openNewQuestion = () => {
     const nextOrder = openedQuestionOrder + 1;
+    if (nextOrder > QUESTIONS_SIZE) return;
 
     setOpenedQuestionOrder(nextOrder);
     setOpenedQuestionDateMap({
