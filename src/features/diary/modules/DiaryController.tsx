@@ -1,5 +1,5 @@
 import Typo from "@/src/components/Typo";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import styled, { useTheme } from "styled-components/native";
 import Btn from "@/src/components/Btn";
@@ -7,13 +7,22 @@ import { useRouter } from "expo-router";
 import { IconHelp } from "@tabler/icons-react-native";
 import Layout from "@/src/components/Layout";
 import useDiaryStore from "../stores/useDiaryStore";
+import useTutorial from "../../core/hooks/useTutorial";
 
 function DiaryController() {
   const theme = useTheme();
   const { t } = useTranslation();
   const { navigate } = useRouter();
 
+  const { checkDoneTutorial, doneTutorial } = useTutorial();
   const openHelpModal = useDiaryStore((s) => s.openHelp);
+
+  useEffect(() => {
+    if (checkDoneTutorial("diary")) return;
+
+    openHelpModal();
+    doneTutorial("diary");
+  }, [checkDoneTutorial]);
 
   const handleWrite = () => {
     navigate("/diary/write");

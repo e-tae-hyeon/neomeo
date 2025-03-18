@@ -1,5 +1,5 @@
 import Typo from "@/src/components/Typo";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import styled, { useTheme } from "styled-components/native";
 import usePet from "../../me/hooks/usePet";
@@ -10,6 +10,7 @@ import useTodayQuestion from "../hooks/useTodayQuestion";
 import { QUESTIONS_SIZE } from "../common/question";
 import useQuestions from "../hooks/useQuestions";
 import useQuestionStore from "../stores/useQuestionStore";
+import useTutorial from "../../core/hooks/useTutorial";
 
 function QuestionController() {
   const theme = useTheme();
@@ -19,10 +20,18 @@ function QuestionController() {
   const { pet } = usePet();
   const { questions } = useQuestions();
   const { todayQuestion } = useTodayQuestion();
+  const { checkDoneTutorial, doneTutorial } = useTutorial();
   const openHelpModal = useQuestionStore((s) => s.openHelp);
 
   const star = t("common.view.star", { returnObjects: true })[pet.kind!];
   const remain = QUESTIONS_SIZE - questions.length;
+
+  useEffect(() => {
+    if (checkDoneTutorial("question")) return;
+
+    openHelpModal();
+    doneTutorial("question");
+  }, [checkDoneTutorial]);
 
   const handleViewAll = () => {
     navigate("/question/list");
