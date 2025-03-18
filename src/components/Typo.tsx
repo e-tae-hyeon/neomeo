@@ -19,7 +19,7 @@ const Regular = styled.Text.attrs({
 `;
 
 const Title = styled(Bold)`
-  font-size: 40px;
+  font-size: 30px;
 `;
 
 const H1 = styled(Bold)`
