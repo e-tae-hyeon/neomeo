@@ -5,10 +5,11 @@ import styled, { useTheme } from "styled-components/native";
 import usePet from "../../me/hooks/usePet";
 import { useRouter } from "expo-router";
 import Layout from "@/src/components/Layout";
-import { IconCaretRightFilled } from "@tabler/icons-react-native";
+import { IconCaretRightFilled, IconHelp } from "@tabler/icons-react-native";
 import useTodayQuestion from "../hooks/useTodayQuestion";
 import { QUESTIONS_SIZE } from "../common/question";
 import useQuestions from "../hooks/useQuestions";
+import useQuestionStore from "../stores/useQuestionStore";
 
 function QuestionController() {
   const theme = useTheme();
@@ -18,6 +19,7 @@ function QuestionController() {
   const { pet } = usePet();
   const { questions } = useQuestions();
   const { todayQuestion } = useTodayQuestion();
+  const openHelpModal = useQuestionStore((s) => s.openHelp);
 
   const star = t("common.view.star", { returnObjects: true })[pet.kind!];
   const remain = QUESTIONS_SIZE - questions.length;
@@ -37,30 +39,38 @@ function QuestionController() {
 
   return (
     <Root>
-      <Body>
-        <Head>
-          <Title>{t("common.view.earth")}</Title>
-          <IconCaretRightFilled
-            color={theme.system.text100}
-            fill={theme.system.text100}
-          />
-          <Title>{star}</Title>
-        </Head>
+      <Window>
+        <Body>
+          <Head>
+            <Title>{t("common.view.earth")}</Title>
+            <IconCaretRightFilled
+              color={theme.system.text100}
+              fill={theme.system.text100}
+            />
+            <Title>{star}</Title>
+          </Head>
 
-        <Desc>{t("question.remain", { star, count: remain })}</Desc>
-      </Body>
+          <Desc>{t("question.remain", { star, count: remain })}</Desc>
+        </Body>
 
-      <BtnContainer>
-        <CancelBtn onPress={handleViewAll}>
-          <Label>{t("question.viewAll")}</Label>
-        </CancelBtn>
+        <BtnContainer>
+          <CancelBtn onPress={handleViewAll}>
+            <Label>{t("question.viewAll")}</Label>
+          </CancelBtn>
 
-        <Divider />
+          <Divider />
 
-        <ConfirmBtn onPress={handleWrite}>
-          <WriteLabel>{t("question.write.label")}</WriteLabel>
-        </ConfirmBtn>
-      </BtnContainer>
+          <ConfirmBtn onPress={handleWrite}>
+            <WriteLabel>{t("question.write.label")}</WriteLabel>
+          </ConfirmBtn>
+        </BtnContainer>
+      </Window>
+
+      <Footer>
+        <HelpBtn onPress={openHelpModal}>
+          <IconHelp color={theme.system.main} />
+        </HelpBtn>
+      </Footer>
     </Root>
   );
 }
@@ -68,6 +78,10 @@ function QuestionController() {
 export default QuestionController;
 
 const Root = styled.View`
+  gap: 8px;
+`;
+
+const Window = styled.View`
   gap: 24px;
   padding: 20px 30px;
   border-radius: 24px;
@@ -115,4 +129,14 @@ const Label = styled(Typo.Label)``;
 
 const WriteLabel = styled(Label)`
   color: ${(props) => props.theme.system.white};
+`;
+
+const Footer = styled(Layout.Row)`
+  justify-content: flex-end;
+`;
+
+const HelpBtn = styled.TouchableOpacity`
+  padding: 4px;
+  border-radius: 12px;
+  background-color: ${(props) => props.theme.system.white};
 `;

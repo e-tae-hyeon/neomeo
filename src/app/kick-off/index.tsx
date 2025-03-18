@@ -14,7 +14,7 @@ function KickOffScreen() {
   const { replace } = useRouter();
 
   const pagerRef = useRef<PagerView>(null);
-  const [phase, setPhase] = useState(2);
+  const [phase, setPhase] = useState(0);
   const isLast = phase === 2;
   const { doneKickOff } = useKickOff();
 

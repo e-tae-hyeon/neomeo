@@ -1,5 +1,6 @@
 import Layout from "@/src/components/Layout";
 import DiaryController from "@/src/features/diary/modules/DiaryController";
+import DiaryHelpModal from "@/src/features/diary/modules/DiaryHelpModal";
 import { Image } from "expo-image";
 import React from "react";
 import styled from "styled-components/native";
@@ -17,6 +18,8 @@ function DiaryScreen() {
       <Main>
         <DiaryController />
       </Main>
+
+      <DiaryHelpModal />
     </Screen>
   );
 }

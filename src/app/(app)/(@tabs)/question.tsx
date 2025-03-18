@@ -1,6 +1,7 @@
 import Layout from "@/src/components/Layout";
 import QuestionAddConfig from "@/src/features/question/modules/QuestionAddConfig";
 import QuestionController from "@/src/features/question/modules/QuestionController";
+import QuestionHelpModal from "@/src/features/question/modules/QuestionHelpModal";
 import { Image } from "expo-image";
 import React from "react";
 import styled from "styled-components/native";
@@ -19,6 +20,7 @@ function QuestionScreen() {
         <QuestionController />
       </Main>
 
+      <QuestionHelpModal />
       <QuestionAddConfig />
     </Screen>
   );

@@ -1,13 +1,19 @@
 import Typo from "@/src/components/Typo";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import styled from "styled-components/native";
+import styled, { useTheme } from "styled-components/native";
 import Btn from "@/src/components/Btn";
 import { useRouter } from "expo-router";
+import { IconHelp } from "@tabler/icons-react-native";
+import Layout from "@/src/components/Layout";
+import useDiaryStore from "../stores/useDiaryStore";
 
 function DiaryController() {
+  const theme = useTheme();
   const { t } = useTranslation();
   const { navigate } = useRouter();
+
+  const openHelpModal = useDiaryStore((s) => s.openHelp);
 
   const handleWrite = () => {
     navigate("/diary/write");
@@ -15,14 +21,22 @@ function DiaryController() {
 
   return (
     <Root>
-      <Body>
-        <Title>{t("diary.title")}</Title>
-        <Desc>{t("diary.desc")}</Desc>
-      </Body>
+      <Window>
+        <Body>
+          <Title>{t("diary.title")}</Title>
+          <Desc>{t("diary.desc")}</Desc>
+        </Body>
 
-      <Btn onPress={handleWrite} weight="secondary">
-        {t("diary.go")}
-      </Btn>
+        <Btn onPress={handleWrite} weight="secondary">
+          {t("diary.go")}
+        </Btn>
+      </Window>
+
+      <Footer>
+        <HelpBtn onPress={openHelpModal}>
+          <IconHelp color={theme.system.main} />
+        </HelpBtn>
+      </Footer>
     </Root>
   );
 }
@@ -30,6 +44,10 @@ function DiaryController() {
 export default DiaryController;
 
 const Root = styled.View`
+  gap: 8px;
+`;
+
+const Window = styled.View`
   gap: 24px;
   padding: 20px 30px;
   border-radius: 24px;
@@ -43,3 +61,13 @@ const Body = styled.View`
 const Title = styled(Typo.H3)``;
 
 const Desc = styled(Typo.B3)``;
+
+const Footer = styled(Layout.Row)`
+  justify-content: flex-end;
+`;
+
+const HelpBtn = styled.TouchableOpacity`
+  padding: 4px;
+  border-radius: 12px;
+  background-color: ${(props) => props.theme.system.white};
+`;

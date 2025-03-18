@@ -1,5 +1,6 @@
 import Layout from "@/src/components/Layout";
 import LetterController from "@/src/features/letter/modules/LetterController";
+import LetterHelpModal from "@/src/features/letter/modules/LetterHelpModal";
 import { Image } from "expo-image";
 import React from "react";
 import styled from "styled-components/native";
@@ -17,6 +18,8 @@ function LetterScreen() {
       <Main>
         <LetterController />
       </Main>
+
+      <LetterHelpModal />
     </Screen>
   );
 }
