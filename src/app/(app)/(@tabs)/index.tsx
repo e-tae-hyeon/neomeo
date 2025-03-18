@@ -1,23 +1,39 @@
 import Layout from "@/src/components/Layout";
+import useEnd from "@/src/features/home/hooks/useEnd";
+import CheckEndConfig from "@/src/features/home/modules/CheckEndConfig";
+import EndingController from "@/src/features/home/modules/EndingController";
 import HomeNavigator from "@/src/features/home/modules/HomeNavigator";
 import { Image } from "expo-image";
 import React from "react";
 import styled from "styled-components/native";
 
 function HomeScreen() {
+  const { isEnd } = useEnd();
+
   return (
     <Screen>
       <Background>
         <Image
-          source={require("@images/core/home-background.png")}
-          contentPosition={"top center"}
+          source={
+            isEnd
+              ? require("@images/core/end-background.png")
+              : require("@images/core/home-background.png")
+          }
+          contentPosition={isEnd ? "center" : "top center"}
           style={{ flex: 1 }}
         />
       </Background>
 
-      <Top>
-        <HomeNavigator />
-      </Top>
+      {isEnd ? (
+        <Main>
+          <EndingController />
+        </Main>
+      ) : (
+        <Top>
+          <HomeNavigator />
+        </Top>
+      )}
+      <CheckEndConfig />
     </Screen>
   );
 }
@@ -38,4 +54,8 @@ const Background = styled.View`
 
 const Top = styled(Layout.Row)`
   justify-content: flex-end;
+`;
+
+const Main = styled.View`
+  padding: 20px;
 `;

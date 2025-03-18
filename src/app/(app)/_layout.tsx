@@ -17,6 +17,10 @@ function AppLayout() {
       <Stack.Screen name="diary" options={{ gestureEnabled: false }} />
       <Stack.Screen name="letter" options={{ gestureEnabled: false }} />
       <Stack.Screen name="settings" />
+      <Stack.Screen
+        name="ending/index"
+        options={{ gestureEnabled: false, animation: "fade" }}
+      />
     </Stack>
   );
 }

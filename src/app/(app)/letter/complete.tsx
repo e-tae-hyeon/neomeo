@@ -27,7 +27,7 @@ function CompleteLetterScreen() {
 
   return (
     <Screen>
-      <Background entering={FadeIn}>
+      <Background>
         <Image
           source={require("@images/core/letter-complete.png")}
           style={{ flex: 1 }}
@@ -47,7 +47,7 @@ export default CompleteLetterScreen;
 
 const Screen = styled(Layout.Screen)``;
 
-const Background = styled(Animated.View)`
+const Background = styled.View`
   position: absolute;
   top: 0;
   right: 0;

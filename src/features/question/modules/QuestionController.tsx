@@ -59,7 +59,11 @@ function QuestionController() {
             <Title>{star}</Title>
           </Head>
 
-          <Desc>{t("question.remain", { star, count: remain })}</Desc>
+          <Desc>
+            {remain > 0
+              ? t("question.remain", { star, count: remain })
+              : t("ending.view.arrive", { star })}
+          </Desc>
         </Body>
 
         <BtnContainer>

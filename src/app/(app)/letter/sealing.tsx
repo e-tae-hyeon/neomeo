@@ -3,7 +3,7 @@ import Typo from "@/src/components/Typo";
 import { Image } from "expo-image";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import React, { useEffect } from "react";
-import Animated, { FadeInUp, FadeOut } from "react-native-reanimated";
+import Animated, { FadeInUp } from "react-native-reanimated";
 import styled from "styled-components/native";
 
 function CompleteLetterScreen() {
@@ -35,7 +35,7 @@ function CompleteLetterScreen() {
 
   return (
     <Screen>
-      <Background exiting={FadeOut}>
+      <Background>
         <Image
           source={require("@images/core/letter-background.png")}
           style={{ flex: 1 }}
@@ -69,7 +69,7 @@ export default CompleteLetterScreen;
 
 const Screen = styled(Layout.Screen)``;
 
-const Background = styled(Animated.View)`
+const Background = styled.View`
   position: absolute;
   top: 0;
   right: 0;

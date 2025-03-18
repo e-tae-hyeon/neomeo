@@ -24,7 +24,7 @@ function CompleteDiaryScreen() {
 
   return (
     <Screen>
-      <Background entering={FadeIn}>
+      <Background>
         <Image
           source={require("@images/core/diary-complete.png")}
           style={{ flex: 1 }}
@@ -44,7 +44,7 @@ export default CompleteDiaryScreen;
 
 const Screen = styled(Layout.Screen)``;
 
-const Background = styled(Animated.View)`
+const Background = styled.View`
   position: absolute;
   top: 0;
   right: 0;

@@ -158,6 +158,16 @@
         }
       }
     },
+    "ending": {
+      "title": "{{star}}에 잘 도착했어요.",
+      "content": "질문에 답변해주시는 동안 {{name}}이 탄 열차는 {{star}}에 도착했어요.\n{{name}}은 이 곳에서 잘 지내며 {{user}}를 기다릴 거예요.\n다시 만나는 그 날까지, {{name}}과의 추억과 함께 잘 지내길 바라요.",
+      "view": {
+        "view": "지금까지 답변 모아보기",
+        "arrive": "{{star}}에 도착하였습니다.",
+        "final": "종착역",
+        "order": "{{order}}번째 질문"
+      }
+    },
     "settings": {
       "settings": "설정",
       "locale": {

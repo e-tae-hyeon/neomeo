@@ -5,6 +5,7 @@ import {
 import { QUESTIONS, QUESTIONS_SIZE } from "../common/question";
 import useSettingsStore from "../../settings/stores/useSettingsStore";
 import DateUtil from "@/src/util/DateUtil";
+import usePet from "../../me/hooks/usePet";
 
 export type IQuestion = {
   order: number;
@@ -14,6 +15,8 @@ export type IQuestion = {
 
 function useQuestions() {
   const KEY = "k_open_question_order";
+
+  const { pet } = usePet();
 
   const {
     general: { locale },
@@ -33,11 +36,12 @@ function useQuestions() {
     .slice(0, openedQuestionOrder)
     .map((content, idx) => {
       const order = idx + 1;
+      const _content = content.replace("{{name}}", pet.name);
       const createdAt = openedQuestionDateMap[order];
 
       return {
         order,
-        content,
+        content: _content,
         createdAt,
       };
     });
