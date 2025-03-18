@@ -11,7 +11,10 @@
     "ios": {
       "bundleIdentifier": "com.yurang.neomeo",
       "googleServicesFile": "./config/GoogleService-Info.plist",
-      "supportsTablet": false
+      "supportsTablet": false,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "package": "com.yurang.neomeo",
@@ -38,7 +41,9 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/NanumGothic.otf"]
+          "fonts": [
+            "./assets/fonts/NanumGothic.otf"
+          ]
         }
       ],
       "@react-native-firebase/app",
@@ -55,6 +60,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "11db20c4-5b33-4856-a9a4-4d6a1216c98f"
+      }
     }
   }
 }
