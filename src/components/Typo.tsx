@@ -5,7 +5,7 @@ const Bold = styled.Text.attrs({
   textBreakStrategy: "balanced",
 })`
   color: ${(props) => props.theme.system.text100};
-  font-family: "NanumGothic";
+  font-family: "Ownglyph_PDH-Rg";
   font-weight: 700;
 `;
 
@@ -14,52 +14,52 @@ const Regular = styled.Text.attrs({
   textBreakStrategy: "balanced",
 })`
   color: ${(props) => props.theme.system.text100};
-  font-family: "NanumGothic";
+  font-family: "Ownglyph_PDH-Rg";
   font-weight: 400;
 `;
 
 const Title = styled(Bold)`
-  font-size: 30px;
+  font-size: 33px;
 `;
 
 const H1 = styled(Bold)`
-  font-size: 24px;
+  font-size: 27px;
 `;
 
 const H2 = styled(Bold)`
-  font-size: 22px;
+  font-size: 25px;
 `;
 
 const H3 = styled(Bold)`
-  font-size: 20px;
+  font-size: 23px;
 `;
 
 const H4 = styled(Bold)`
-  font-size: 18px;
+  font-size: 21px;
 `;
 
 const Label = styled(Bold)`
-  font-size: 16px;
+  font-size: 19px;
 `;
 
 const B1 = styled(Regular)`
-  font-size: 16px;
+  font-size: 19px;
 `;
 
 const B2 = styled(Regular)`
-  font-size: 15px;
+  font-size: 18px;
 `;
 
 const B3 = styled(Regular)`
-  font-size: 14px;
+  font-size: 17px;
 `;
 
 const B4 = styled(Regular)`
-  font-size: 13px;
+  font-size: 16px;
 `;
 
 const Caption = styled(Regular)`
-  font-size: 13px;
+  font-size: 15px;
 `;
 
 const Typo = {

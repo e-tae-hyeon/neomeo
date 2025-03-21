@@ -41,9 +41,7 @@
       [
         "expo-font",
         {
-          "fonts": [
-            "./assets/fonts/NanumGothic.otf"
-          ]
+          "fonts": ["./assets/fonts/Ownglyph_PDH-Rg.ttf"]
         }
       ],
       "@react-native-firebase/app",
