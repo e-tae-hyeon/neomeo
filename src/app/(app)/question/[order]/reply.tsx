@@ -80,6 +80,10 @@ function ReplyQuestionScreen() {
         <QuestionSignpost order={order} />
       </Header>
 
+      <GroundSection>
+        <GroundBlue />
+      </GroundSection>
+
       <KeyboardAwareScrollView>
         <Body>
           <Paper>
@@ -119,10 +123,6 @@ function ReplyQuestionScreen() {
           </Form>
         </Body>
       </KeyboardAwareScrollView>
-
-      <GroundSection>
-        <GroundBlue />
-      </GroundSection>
 
       <Footer>
         <DualBtn
