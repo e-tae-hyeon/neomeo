@@ -125,7 +125,7 @@ const ContentSection = styled.View`
 `;
 
 const Content = styled(Typo.B1)`
-  line-height: 22px;
+  line-height: 28px;
 `;
 
 const PlaceholderView = styled(Layout.Center)`

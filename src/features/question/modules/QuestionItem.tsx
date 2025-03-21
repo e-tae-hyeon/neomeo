@@ -117,7 +117,7 @@ const Body = styled.View`
   gap: 4px;
 `;
 
-const Title = styled(Typo.Label)``;
+const Title = styled(Typo.B2)``;
 
 const Desc = styled(Typo.B3)`
   color: ${(props) => props.theme.system.text40};
