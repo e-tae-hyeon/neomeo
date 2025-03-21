@@ -6,13 +6,15 @@ import Typo from "@/src/components/Typo";
 import { useRouter } from "expo-router";
 import { useTranslation } from "react-i18next";
 import { Image } from "expo-image";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import DateUtil from "@/src/util/DateUtil";
 
 type Props = {
   question: IQuestion;
 };
 
 function EndingReplyCard({ question }: Props) {
-  const { order, content } = question;
+  const { order, content, createdAt } = question;
   const { t } = useTranslation();
   const { navigate } = useRouter();
 
@@ -34,6 +36,8 @@ function EndingReplyCard({ question }: Props) {
       <QuestionSection>
         <Label>{t("ending.view.order", { order })}</Label>
         <Question>{content}</Question>
+
+        <Desc>{DateUtil.formatDot(createdAt)}</Desc>
       </QuestionSection>
 
       <Divider />
@@ -45,9 +49,8 @@ function EndingReplyCard({ question }: Props) {
 
 export default EndingReplyCard;
 
-const Root = styled.TouchableOpacity`
+const Root = styled(TouchableOpacity)`
   overflow: hidden;
-  flex: 1;
   gap: 20px;
   padding: 24px;
   background-color: ${(props) => props.theme.system.white};
@@ -67,6 +70,10 @@ const Label = styled(Typo.H4)`
 `;
 
 const Question = styled(Typo.H2)``;
+
+const Desc = styled(Typo.B3)`
+  color: ${(props) => props.theme.system.text40};
+`;
 
 const Divider = styled.View`
   height: 1px;
