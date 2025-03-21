@@ -2,7 +2,6 @@ import Layout from "@/src/components/Layout";
 import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components/native";
-import Cloud from "@images/core/cloud.svg";
 import Typo from "@/src/components/Typo";
 import { FlatList, ListRenderItem, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
@@ -56,10 +55,6 @@ function PetKindScreen() {
       <Header.Arrow />
 
       <ScrollView>
-        <Background>
-          <Cloud />
-        </Background>
-
         <Main>
           <Title>{t("auth.pet.kind.title")}</Title>
 
@@ -85,16 +80,9 @@ export default PetKindScreen;
 
 const Screen = styled(Layout.Screen)``;
 
-const Background = styled(Layout.Center)`
-  position: absolute;
-  left: 0;
-  right: 0;
-`;
-
 const Main = styled.View`
   gap: 20px;
-  padding: 20px;
-  padding-top: 80px;
+  padding: 24px;
 `;
 
 const Title = styled(Typo.H3)``;

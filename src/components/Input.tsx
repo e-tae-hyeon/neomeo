@@ -40,7 +40,7 @@ const StyledInput = styled.TextInput.attrs((p) => ({
 }))`
   height: 100%;
   flex: 1;
-  font-family: "NanumGothic";
+  font-family: "Ownglyph_PDH-Rg";
   color: ${(props) => props.theme.system.text100};
-  font-size: 16px;
+  font-size: 19px;
 `;

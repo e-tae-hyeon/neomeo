@@ -10,6 +10,9 @@ import { ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import usePet from "@/src/features/me/hooks/usePet";
 import useAuth from "@/src/features/auth/hooks/useAuth";
+import { LinearGradient } from "expo-linear-gradient";
+import Ground from "@images/core/ground.svg";
+import { josa } from "es-hangul";
 
 function AuthCompleteScreen() {
   const { t } = useTranslation();
@@ -17,6 +20,7 @@ function AuthCompleteScreen() {
 
   const { pet } = usePet();
   const { register } = useAuth();
+  const star = t("common.view.star", { returnObjects: true })[pet.kind!];
 
   const handleDone = () => {
     register();
@@ -26,25 +30,32 @@ function AuthCompleteScreen() {
 
   return (
     <Screen>
-      <ScrollView>
-        <Background>
-          <Cloud />
-        </Background>
+      <Background>
+        <LinearGradient colors={["#9AB6FF", "#B79CE7"]} style={{ flex: 1 }} />
+      </Background>
 
-        <Main>
-          <Body>
-            <Guide>{t("auth.complete.content", { name: pet.name })}</Guide>
-          </Body>
+      <GroundSection>
+        <PopoContainer>
+          <PopoComplete />
+        </PopoContainer>
 
-          <PopoSection>
-            <PopoComplete />
-          </PopoSection>
-        </Main>
-      </ScrollView>
+        <Ground />
+      </GroundSection>
 
-      <Footer>
-        <Btn onPress={handleDone}>{t("auth.complete.goHome")}</Btn>
-      </Footer>
+      <Main>
+        <Body>
+          <Guide>
+            {t("auth.complete.content", {
+              name: josa(pet.name, "은/는"),
+              star,
+            })}
+          </Guide>
+        </Body>
+
+        <Footer>
+          <Btn onPress={handleDone}>{t("auth.complete.goHome")}</Btn>
+        </Footer>
+      </Main>
     </Screen>
   );
 }
@@ -53,26 +64,40 @@ export default AuthCompleteScreen;
 
 const Screen = styled(Layout.Screen)``;
 
-const Background = styled(Layout.Center)`
+const Background = styled.View`
   position: absolute;
-  top: 60px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+`;
+
+const GroundSection = styled(Layout.Center)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
+`;
+
+const PopoContainer = styled(Layout.Center)`
+  z-index: 10;
+  position: absolute;
+  top: -50px;
   left: 0;
   right: 0;
 `;
 
 const Main = styled.View`
-  gap: 120px;
-  padding-top: 160px;
+  flex: 1;
 `;
 
-const Body = styled(Layout.Center)``;
+const Body = styled.View`
+  flex: 1;
+  padding-top: 50%;
+`;
 
 const Guide = styled(Typo.H4)`
   text-align: center;
-`;
-
-const PopoSection = styled(Layout.Center)`
-  padding: 20px;
 `;
 
 const Footer = styled.View`
