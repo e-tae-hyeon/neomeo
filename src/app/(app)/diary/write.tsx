@@ -9,6 +9,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import styled from "styled-components/native";
+import GroundBlue from "@images/core/ground-blue.svg";
 
 function WriteDiaryScreen() {
   const { t } = useTranslation();
@@ -70,6 +71,10 @@ function WriteDiaryScreen() {
         </Body>
       </KeyboardAwareScrollView>
 
+      <GroundSection>
+        <GroundBlue />
+      </GroundSection>
+
       <Footer>
         <DualBtn
           confirmLabel={t("common.action.done")}
@@ -127,12 +132,20 @@ const StyledInput = styled.TextInput.attrs((p) => ({
   placeholderTextColor: p.theme.system.text40,
 }))`
   flex: 1;
-  font-family: "NanumGothic";
-  font-size: 16px;
+  font-family: "Ownglyph_PDH-Rg";
+  font-size: 19px;
   line-height: 22px;
   color: ${(props) => props.theme.system.text100};
 `;
 
 const Footer = styled.View`
   padding: 20px;
+  padding-bottom: 40px;
+`;
+
+const GroundSection = styled(Layout.Center)`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -40px;
 `;
