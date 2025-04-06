@@ -7,6 +7,7 @@ import Header from "@/src/components/Header";
 import Btn from "@/src/components/Btn";
 import usePet from "@/src/features/me/hooks/usePet";
 import PetPreview from "@/src/features/pet/modules/PetPreview";
+import PetCustomManager from "@/src/features/pet/modules/PetCustomManager";
 
 function PetCustomScreen() {
   const { t } = useTranslation();
@@ -24,6 +25,8 @@ function PetCustomScreen() {
 
       <Main>
         <PetPreview />
+
+        <PetCustomManager kind={pet.kind!} />
       </Main>
 
       <Footer>

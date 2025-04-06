@@ -9,6 +9,11 @@ export type IPet = {
   name: string;
   kind?: IPetKind;
 
+  color: string;
+  shape: number;
+  pattern: number;
+  face: number;
+
   createdAt: string;
   updatedAt: string;
 };
@@ -18,6 +23,10 @@ function usePet() {
 
   const defaultPet: IPet = {
     name: "",
+    color: "#E6E6E6",
+    shape: 1,
+    pattern: 1,
+    face: 1,
     createdAt: DateUtil.nowISO(),
     updatedAt: DateUtil.nowISO(),
   };
