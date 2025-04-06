@@ -14,7 +14,7 @@ import { LogBox } from "react-native";
 LogBox.ignoreAllLogs();
 
 SplashScreen.setOptions({
-  duration: 600,
+  duration: 800,
   fade: true,
 });
 
@@ -26,6 +26,7 @@ function RootLayout() {
       <KeyboardProvider>
         <ThemeProvider theme={baseTheme}>
           <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="index" />
             <Stack.Screen name="(app)" />
             <Stack.Screen name="kick-off" />
             <Stack.Screen name="auth" />
