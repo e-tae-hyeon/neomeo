@@ -7,7 +7,7 @@ import { useRouter } from "expo-router";
 function SplashScreen() {
   const { replace } = useRouter();
 
-  const DURATION = 1000;
+  const DURATION = 1500;
 
   useEffect(() => {
     const timer = setTimeout(() => {
