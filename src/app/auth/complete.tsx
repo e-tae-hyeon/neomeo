@@ -25,7 +25,7 @@ function AuthCompleteScreen() {
   const handleDone = () => {
     register();
 
-    navigate("/");
+    navigate("/(app)/(@tabs)");
   };
 
   return (
