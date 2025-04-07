@@ -42,7 +42,11 @@
       [
         "expo-font",
         {
-          "fonts": ["./assets/fonts/Ownglyph_PDH-Rg.ttf"]
+          "fonts": [
+            "./assets/fonts/Ownglyph_PDH-Rg.ttf",
+            "./assets/fonts/KiwiMaru-Regular.ttf",
+            "./assets/fonts/LiuHuanKaTongShouShu.ttf"
+          ]
         }
       ],
       "@react-native-firebase/app",

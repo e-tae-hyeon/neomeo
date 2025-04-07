@@ -1,11 +1,12 @@
 import styled from "styled-components/native";
+import { fontSizeAdditionMap } from "../features/settings/utils/Font";
 
 const Bold = styled.Text.attrs({
   lineBreakStrategyIOS: "hangul-word",
   textBreakStrategy: "balanced",
 })`
   color: ${(props) => props.theme.system.text100};
-  font-family: "Ownglyph_PDH-Rg";
+  font-family: ${(props) => props.theme.font};
   font-weight: 700;
 `;
 
@@ -14,52 +15,52 @@ const Regular = styled.Text.attrs({
   textBreakStrategy: "balanced",
 })`
   color: ${(props) => props.theme.system.text100};
-  font-family: "Ownglyph_PDH-Rg";
+  font-family: ${(props) => props.theme.font};
   font-weight: 400;
 `;
 
 const Title = styled(Bold)`
-  font-size: 33px;
+  font-size: ${(props) => 30 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const H1 = styled(Bold)`
-  font-size: 27px;
+  font-size: ${(props) => 24 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const H2 = styled(Bold)`
-  font-size: 25px;
+  font-size: ${(props) => 22 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const H3 = styled(Bold)`
-  font-size: 23px;
+  font-size: ${(props) => 20 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const H4 = styled(Bold)`
-  font-size: 21px;
+  font-size: ${(props) => 18 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const Label = styled(Bold)`
-  font-size: 19px;
+  font-size: ${(props) => 16 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const B1 = styled(Regular)`
-  font-size: 19px;
+  font-size: ${(props) => 16 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const B2 = styled(Regular)`
-  font-size: 18px;
+  font-size: ${(props) => 15 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const B3 = styled(Regular)`
-  font-size: 17px;
+  font-size: ${(props) => 14 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const B4 = styled(Regular)`
-  font-size: 16px;
+  font-size: ${(props) => 13 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const Caption = styled(Regular)`
-  font-size: 15px;
+  font-size: ${(props) => 12 + fontSizeAdditionMap[props.theme.font]}px;
 `;
 
 const Typo = {

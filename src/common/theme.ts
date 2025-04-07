@@ -1,3 +1,5 @@
+import { Font, getFont } from "../features/settings/utils/Font";
+
 export type SystemColors = {
   white: string;
   black: string;
@@ -30,6 +32,7 @@ type GrayColors = {
 export type AppTheme = {
   system: SystemColors;
   gray: GrayColors;
+  font: Font;
 };
 
 export const baseTheme: AppTheme = {
@@ -60,4 +63,5 @@ export const baseTheme: AppTheme = {
     gray800: "#262626",
     gray900: "#171717",
   },
+  font: getFont(),
 };

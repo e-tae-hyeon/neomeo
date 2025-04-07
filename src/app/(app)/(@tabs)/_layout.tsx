@@ -23,7 +23,7 @@ function TabsLayout() {
         tabBarInactiveTintColor: theme.system.main,
         tabBarIconStyle: { marginBottom: 6 },
         tabBarLabelStyle: {
-          fontFamily: "NanumGothic",
+          fontFamily: theme.font,
           fontWeight: 700,
           fontSize: 12,
         },
