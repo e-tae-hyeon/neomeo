@@ -1,6 +1,7 @@
 import Header from "@/src/components/Header";
 import Layout from "@/src/components/Layout";
 import SettingsNavigator from "@/src/features/settings/modules/SettingsNavigator";
+import SettingsPet from "@/src/features/settings/modules/SettingsPet";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { ScrollView } from "react-native";
@@ -14,7 +15,11 @@ function SettingsScreen() {
       <Header.Arrow title={t("settings.settings")} />
 
       <ScrollView>
-        <SettingsNavigator />
+        <Main>
+          <SettingsPet />
+
+          <SettingsNavigator />
+        </Main>
       </ScrollView>
     </Screen>
   );
@@ -23,3 +28,7 @@ function SettingsScreen() {
 export default SettingsScreen;
 
 const Screen = styled(Layout.Screen)``;
+
+const Main = styled.View`
+  gap: 32px;
+`;

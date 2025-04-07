@@ -8,6 +8,7 @@ import useProfile from "../../auth/hooks/useProfile";
 import Layout from "@/src/components/Layout";
 import { IconPencil } from "@tabler/icons-react-native";
 import { Link } from "expo-router";
+import PetView from "../../pet/modules/PetView";
 
 function SettingsProfile() {
   const { t } = useTranslation();
@@ -70,13 +71,15 @@ function SettingsProfile() {
           <IconPencil size={20} color={theme.system.text100} />
         </Header>
 
-        <Link href={"/settings/custom"} asChild>
-          <PetContainer>
-            <EditTag>
+        <PetContainer>
+          <PetView />
+
+          <Link href={"/settings/custom"} asChild>
+            <EditBtn>
               <Edit>{t("common.action.edit")}</Edit>
-            </EditTag>
-          </PetContainer>
-        </Link>
+            </EditBtn>
+          </Link>
+        </PetContainer>
       </Section>
     </Root>
   );
@@ -99,14 +102,14 @@ const Header = styled(Layout.Row)`
 
 const Title = styled(Typo.H4)``;
 
-const PetContainer = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
+const PetContainer = styled.View`
+  gap: 12px;
   padding: 20px;
 `;
 
-const EditTag = styled.View`
-  padding: 12px 16px;
+const EditBtn = styled.TouchableOpacity`
+  align-self: center;
+  padding: 12px 24px;
   border-radius: 999px;
   background-color: ${(props) => props.theme.system.white};
 `;

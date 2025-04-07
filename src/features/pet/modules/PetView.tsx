@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 import Eclipse from "@images/core/eclipse.svg";
 import Pet from "./Pet";
 
-function PetPreview() {
+function PetView() {
   return (
     <Root>
       <Background>
@@ -18,7 +18,7 @@ function PetPreview() {
   );
 }
 
-export default PetPreview;
+export default PetView;
 
 const Root = styled(Layout.Center)`
   aspect-ratio: 16/9;
