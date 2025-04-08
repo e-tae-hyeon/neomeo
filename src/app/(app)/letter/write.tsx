@@ -13,6 +13,7 @@ import { useTranslation } from "react-i18next";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import styled from "styled-components/native";
 import GroundBlue from "@images/core/ground-blue.svg";
+import { fontSizeAdditionMap } from "@/src/features/settings/utils/Font";
 
 function WriteLetterScreen() {
   const { t } = useTranslation();
@@ -134,9 +135,9 @@ const StyledInput = styled.TextInput.attrs((p) => ({
   placeholderTextColor: p.theme.system.text40,
 }))`
   flex: 1;
-  font-family: "Ownglyph_PDH-Rg";
-  font-size: 19px;
-  line-height: 22px;
+  font-family: ${(props) => props.theme.font};
+  font-size: ${(props) => 19 + fontSizeAdditionMap[props.theme.font]}px;
+  line-height: 24px;
   color: ${(props) => props.theme.system.text100};
 `;
 
