@@ -26,7 +26,7 @@ export function getFont(): Font {
 }
 
 export const fontSizeAdditionMap: Record<Font, number> = {
-  "Ownglyph_PDH-Rg": 2,
-  "KiwiMaru-Regular": 0,
-  LiuHuanKaTongShouShu: 1,
+  "Ownglyph_PDH-Rg": 3,
+  "KiwiMaru-Regular": 1,
+  LiuHuanKaTongShouShu: 2,
 };
