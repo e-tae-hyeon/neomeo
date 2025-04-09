@@ -17,6 +17,7 @@ import styled from "styled-components/native";
 import * as ImagePicker from "expo-image-picker";
 import GroundBlue from "@images/core/ground-blue.svg";
 import { fontSizeAdditionMap } from "@/src/features/settings/utils/Font";
+import KeyboardToolbar from "@/src/features/core/modules/KeyboardToolbar";
 
 function ReplyQuestionScreen() {
   const { t } = useTranslation();
@@ -76,63 +77,66 @@ function ReplyQuestionScreen() {
   };
 
   return (
-    <Screen>
-      <Header>
-        <QuestionSignpost order={order} />
-      </Header>
+    <>
+      <Screen>
+        <Header>
+          <QuestionSignpost order={order} />
+        </Header>
 
-      <GroundSection>
-        <GroundBlue />
-      </GroundSection>
+        <GroundSection>
+          <GroundBlue />
+        </GroundSection>
 
-      <KeyboardAwareScrollView>
-        <Body>
-          <Paper>
-            <Image
-              source={require("@images/core/paper.png")}
-              style={{ flex: 1 }}
-            />
-          </Paper>
+        <KeyboardAwareScrollView>
+          <Body>
+            <Paper>
+              <Image
+                source={require("@images/core/paper.png")}
+                style={{ flex: 1 }}
+              />
+            </Paper>
 
-          <Form>
-            <Head>
-              <Question>{question.content}</Question>
-            </Head>
+            <Form>
+              <Head>
+                <Question>{question.content}</Question>
+              </Head>
 
-            <Divider />
+              <Divider />
 
-            <StyledInput
-              placeholder={t("letter.write.placeholder")}
-              value={content}
-              onChangeText={setContent}
-              multiline
-            />
+              <StyledInput
+                placeholder={t("letter.write.placeholder")}
+                value={content}
+                onChangeText={setContent}
+                multiline
+              />
 
-            <ImageSection>
-              <ImageBody>
-                {imageUri && (
-                  <ImageContainer>
-                    <Image source={imageUri} style={{ flex: 1 }} />
-                  </ImageContainer>
-                )}
-              </ImageBody>
+              <ImageSection>
+                <ImageBody>
+                  {imageUri && (
+                    <ImageContainer>
+                      <Image source={imageUri} style={{ flex: 1 }} />
+                    </ImageContainer>
+                  )}
+                </ImageBody>
 
-              <ImageBtn onPress={handlePressImage} hitSlop={8}>
-                <IconPhoto />
-              </ImageBtn>
-            </ImageSection>
-          </Form>
-        </Body>
-      </KeyboardAwareScrollView>
+                <ImageBtn onPress={handlePressImage} hitSlop={8}>
+                  <IconPhoto />
+                </ImageBtn>
+              </ImageSection>
+            </Form>
+          </Body>
+        </KeyboardAwareScrollView>
 
-      <Footer>
-        <DualBtn
-          confirmLabel={t("common.action.save")}
-          onCancel={handleCancel}
-          onConfirm={handleConfirm}
-        />
-      </Footer>
-    </Screen>
+        <Footer>
+          <DualBtn
+            confirmLabel={t("common.action.save")}
+            onCancel={handleCancel}
+            onConfirm={handleConfirm}
+          />
+        </Footer>
+      </Screen>
+      <KeyboardToolbar />
+    </>
   );
 }
 

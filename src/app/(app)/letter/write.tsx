@@ -14,6 +14,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import styled from "styled-components/native";
 import GroundBlue from "@images/core/ground-blue.svg";
 import { fontSizeAdditionMap } from "@/src/features/settings/utils/Font";
+import KeyboardToolbar from "@/src/features/core/modules/KeyboardToolbar";
 
 function WriteLetterScreen() {
   const { t } = useTranslation();
@@ -43,49 +44,52 @@ function WriteLetterScreen() {
   };
 
   return (
-    <Screen>
-      <Header>
-        <Title>{t("letter.letter")}</Title>
-      </Header>
+    <>
+      <Screen>
+        <Header>
+          <Title>{t("letter.letter")}</Title>
+        </Header>
 
-      <KeyboardAwareScrollView>
-        <Body>
-          <Paper>
-            <Image
-              source={require("@images/core/paper.png")}
-              style={{ flex: 1 }}
-            />
-          </Paper>
+        <KeyboardAwareScrollView>
+          <Body>
+            <Paper>
+              <Image
+                source={require("@images/core/paper.png")}
+                style={{ flex: 1 }}
+              />
+            </Paper>
 
-          <Form>
-            <Head>
-              <To>To. {pet.name}</To>
-            </Head>
+            <Form>
+              <Head>
+                <To>To. {pet.name}</To>
+              </Head>
 
-            <Divider />
+              <Divider />
 
-            <StyledInput
-              placeholder={t("letter.write.placeholder")}
-              value={content}
-              onChangeText={setContent}
-              multiline
-            />
-          </Form>
-        </Body>
-      </KeyboardAwareScrollView>
+              <StyledInput
+                placeholder={t("letter.write.placeholder")}
+                value={content}
+                onChangeText={setContent}
+                multiline
+              />
+            </Form>
+          </Body>
+        </KeyboardAwareScrollView>
 
-      <GroundSection>
-        <GroundBlue />
-      </GroundSection>
+        <GroundSection>
+          <GroundBlue />
+        </GroundSection>
 
-      <Footer>
-        <DualBtn
-          confirmLabel={t("common.action.next")}
-          onCancel={handleCancel}
-          onConfirm={handleConfirm}
-        />
-      </Footer>
-    </Screen>
+        <Footer>
+          <DualBtn
+            confirmLabel={t("common.action.next")}
+            onCancel={handleCancel}
+            onConfirm={handleConfirm}
+          />
+        </Footer>
+      </Screen>
+      <KeyboardToolbar />
+    </>
   );
 }
 
