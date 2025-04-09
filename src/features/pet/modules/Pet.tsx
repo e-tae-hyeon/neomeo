@@ -4,7 +4,11 @@ import usePet from "../../me/hooks/usePet";
 import Layout from "@/src/components/Layout";
 import pet_doll from "../common/doll";
 
-function Pet() {
+type Props = {
+  size?: number;
+};
+
+function Pet({ size = 120 }: Props) {
   const { pet } = usePet();
 
   const { kind, color, shape, pattern, face } = pet;
@@ -15,7 +19,7 @@ function Pet() {
 
   return (
     <Root>
-      <Comp color={color} width={120} height={120} />
+      <Comp color={color} width={size} height={size} />
     </Root>
   );
 }

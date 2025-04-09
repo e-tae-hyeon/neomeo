@@ -1,5 +1,4 @@
-import { IconSettings, IconTicket } from "@tabler/icons-react-native";
-import { Link } from "expo-router";
+import { IconTicket } from "@tabler/icons-react-native";
 import React from "react";
 import styled, { useTheme } from "styled-components/native";
 import useModal from "../../core/hooks/useModal";
@@ -15,12 +14,6 @@ function HomeNavigator() {
 
   return (
     <Root>
-      <Link href={"/settings"} asChild>
-        <MenuBtn>
-          <IconSettings color={theme.system.main} size={30} />
-        </MenuBtn>
-      </Link>
-
       <MenuBtn onPress={handlePressTicket}>
         <IconTicket color={theme.system.main} size={30} />
       </MenuBtn>
@@ -30,10 +23,7 @@ function HomeNavigator() {
 
 export default HomeNavigator;
 
-const Root = styled.View`
-  gap: 12px;
-  padding: 20px;
-`;
+const Root = styled.View``;
 
 const MenuBtn = styled.TouchableOpacity`
   padding: 6px;
