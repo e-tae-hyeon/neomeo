@@ -50,6 +50,7 @@ function EndingReplyCard({ question }: Props) {
 export default EndingReplyCard;
 
 const Root = styled(TouchableOpacity)`
+  height: 100%;
   overflow: hidden;
   gap: 20px;
   padding: 24px;
