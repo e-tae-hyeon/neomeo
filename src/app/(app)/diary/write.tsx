@@ -45,7 +45,7 @@ function WriteDiaryScreen() {
     <>
       <Screen>
         <Header>
-          <Title>{t("letter.letter")}</Title>
+          <Title>{t("diary.diary")}</Title>
         </Header>
 
         <KeyboardAwareScrollView>
