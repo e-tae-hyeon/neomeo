@@ -10,6 +10,8 @@ import { IconX } from "@tabler/icons-react-native";
 import Btn from "@/src/components/Btn";
 import Animated, { FadeIn } from "react-native-reanimated";
 import useDiaryStore from "../stores/useDiaryStore";
+import Pet from "../../pet/modules/Pet";
+import { Image } from "expo-image";
 
 function DiaryHelpModal() {
   const theme = useTheme();
@@ -52,6 +54,12 @@ function DiaryHelpModal() {
                 <Title>{t("diary.help.first.title")}</Title>
                 <Desc>{t("diary.help.first.desc", { name: pet.name })}</Desc>
               </Head>
+
+              <Image
+                source={require("@images/core/diary-help-1.png")}
+                style={{ flex: 1 }}
+                contentFit="contain"
+              />
             </Page>
 
             <Page key={2}>
@@ -59,6 +67,10 @@ function DiaryHelpModal() {
                 <Title>{t("diary.help.second.title")}</Title>
                 <Desc>{t("diary.help.second.desc", { name: pet.name })}</Desc>
               </Head>
+
+              <Full>
+                <Pet size={152} />
+              </Full>
             </Page>
           </PagerView>
 
@@ -108,6 +120,7 @@ const Window = styled(Animated.View)`
 
 const Page = styled.View`
   flex: 1;
+  gap: 20px;
   padding: 20px 12px;
 `;
 
@@ -140,4 +153,8 @@ const Dot = styled.View<{ isSelected: boolean }>`
   border-radius: 999px;
   opacity: ${(props) => (props.isSelected ? 1 : 0.3)};
   background-color: ${(props) => props.theme.system.text100};
+`;
+
+const Full = styled(Layout.Center)`
+  flex: 1;
 `;

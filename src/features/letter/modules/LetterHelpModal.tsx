@@ -10,6 +10,8 @@ import { IconX } from "@tabler/icons-react-native";
 import Btn from "@/src/components/Btn";
 import useLetterStore from "../stores/useLetterStore";
 import Animated, { FadeIn } from "react-native-reanimated";
+import { Image } from "expo-image";
+import Pet from "../../pet/modules/Pet";
 
 function LetterHelpModal() {
   const theme = useTheme();
@@ -52,6 +54,12 @@ function LetterHelpModal() {
                 <Title>{t("letter.help.first.title")}</Title>
                 <Desc>{t("letter.help.first.desc", { name: pet.name })}</Desc>
               </Head>
+
+              <Image
+                source={require("@images/core/letter-help-1.png")}
+                style={{ flex: 1 }}
+                contentFit="contain"
+              />
             </Page>
 
             <Page key={2}>
@@ -59,6 +67,12 @@ function LetterHelpModal() {
                 <Title>{t("letter.help.second.title")}</Title>
                 <Desc>{t("letter.help.second.desc", { name: pet.name })}</Desc>
               </Head>
+
+              <Image
+                source={require("@images/core/letter-help-2.png")}
+                style={{ flex: 1 }}
+                contentFit="contain"
+              />
             </Page>
 
             <Page key={3}>
@@ -66,6 +80,10 @@ function LetterHelpModal() {
                 <Title>{t("letter.help.third.title")}</Title>
                 <Desc>{t("letter.help.third.desc", { name: pet.name })}</Desc>
               </Head>
+
+              <Full>
+                <Pet size={152} />
+              </Full>
             </Page>
           </PagerView>
 
@@ -115,6 +133,7 @@ const Window = styled(Animated.View)`
 
 const Page = styled.View`
   flex: 1;
+  gap: 20px;
   padding: 20px 12px;
 `;
 
@@ -147,4 +166,8 @@ const Dot = styled.View<{ isSelected: boolean }>`
   border-radius: 999px;
   opacity: ${(props) => (props.isSelected ? 1 : 0.3)};
   background-color: ${(props) => props.theme.system.text100};
+`;
+
+const Full = styled(Layout.Center)`
+  flex: 1;
 `;

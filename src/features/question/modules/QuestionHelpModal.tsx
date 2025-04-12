@@ -10,6 +10,8 @@ import { IconX } from "@tabler/icons-react-native";
 import Btn from "@/src/components/Btn";
 import Animated, { FadeIn } from "react-native-reanimated";
 import useQuestionStore from "../stores/useQuestionStore";
+import Pet from "../../pet/modules/Pet";
+import { Image } from "expo-image";
 
 function QuestionHelpModal() {
   const theme = useTheme();
@@ -53,6 +55,12 @@ function QuestionHelpModal() {
                 <Title>{t("question.help.first.title")}</Title>
                 <Desc>{t("question.help.first.desc", { name: pet.name })}</Desc>
               </Head>
+
+              <Image
+                source={require("@images/core/question-help-1.png")}
+                style={{ flex: 1 }}
+                contentFit="contain"
+              />
             </Page>
 
             <Page key={2}>
@@ -62,6 +70,12 @@ function QuestionHelpModal() {
                   {t("question.help.second.desc", { name: pet.name })}
                 </Desc>
               </Head>
+
+              <Image
+                source={require("@images/core/question-help-2.png")}
+                style={{ flex: 1 }}
+                contentFit="contain"
+              />
             </Page>
 
             <Page key={3}>
@@ -71,6 +85,10 @@ function QuestionHelpModal() {
                   {t("question.help.third.desc", { name: pet.name, star })}
                 </Desc>
               </Head>
+
+              <Full>
+                <Pet size={152} />
+              </Full>
             </Page>
           </PagerView>
 
@@ -120,6 +138,7 @@ const Window = styled(Animated.View)`
 
 const Page = styled.View`
   flex: 1;
+  gap: 20px;
   padding: 20px 12px;
 `;
 
@@ -152,4 +171,8 @@ const Dot = styled.View<{ isSelected: boolean }>`
   border-radius: 999px;
   opacity: ${(props) => (props.isSelected ? 1 : 0.3)};
   background-color: ${(props) => props.theme.system.text100};
+`;
+
+const Full = styled(Layout.Center)`
+  flex: 1;
 `;
