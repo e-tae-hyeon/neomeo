@@ -1,0 +1,199 @@
+{
+  "translation": {
+    "app": "neomeo",
+    "common": {
+      "action": {
+        "cancel": "Cancel",
+        "confirm": "Confirm",
+        "prev": "Previous",
+        "next": "Next",
+        "start": "Get Started",
+        "edit": "Edit",
+        "done": "Done",
+        "save": "Save"
+      },
+      "view": {
+        "cancel": {
+          "title": "Would you like to cancel writing?",
+          "desc": "*If canceled, all written content will be deleted."
+        },
+        "earth": "Earth",
+        "star": {
+          "dog": "Dog Star",
+          "cat": "Cat Star"
+        },
+        "memory": "Memories of {{name}}"
+      }
+    },
+    "core": {
+      "noti": {
+        "permission": {
+          "title": "Allow notifications\nand receive alerts when a question arrives."
+        },
+        "question": "A new question has arrived. Please join {{name}} on the farewell journey."
+      }
+    },
+    "kickOff": {
+      "welcome": {
+        "first": "To you who miss your pet that left first.\n\nOur friend is preparing to cross the rainbow bridge by train,\ncarrying the memories you shared.",
+        "second": "For our precious friend to complete\nthe train journey beyond the rainbow bridge,\nwe need your warm heart here on Earth.",
+        "third": "Here, we can revisit memories,\nshare our feelings, and send letters.\n\nAre you ready to join our friend on their final journey?"
+      }
+    },
+    "auth": {
+      "start": {
+        "content": "I'm Popo, the conductor of the Neomeo train.\n\nThis train departs from Earth and heads beyond the rainbow bridge.\n\nPlease let us know about our friend for the check-in process.",
+        "go": "Go to Check-in"
+      },
+      "profile": {
+        "name": {
+          "title": "Who am I to my pet?",
+          "placeholder": "Please enter your title.",
+          "caption": "Up to 10 characters in Korean or English."
+        }
+      },
+      "pet": {
+        "name": {
+          "title": "What is your pet's name?",
+          "placeholder": "Please enter a name.",
+          "caption": "Up to 10 characters in Korean or English."
+        },
+        "kind": {
+          "title": "What kind of companion is your pet?",
+          "options": {
+            "dog": "Dog",
+            "cat": "Cat"
+          }
+        }
+      },
+      "complete": {
+        "content": "Check-in is complete.\n\nNow, {{name}} will cross the rainbow bridge\njust as you remember them.\n\nWe will safely escort them to {{star}}.",
+        "goHome": "Go to Home"
+      }
+    },
+    "home": {
+      "home": "Home"
+    },
+    "question": {
+      "question": "Q&A",
+      "placeholder": "No answers have been written yet.",
+      "remain": "There are {{count}} questions left until arrival at {{star}}.",
+      "viewAll": "View Existing Answers",
+      "signpost": "Station #{{count}}",
+      "write": {
+        "label": "Write an Answer",
+        "placeholder": "Please enter the content.",
+        "complete": {
+          "title": "Would you like to save the answer you wrote?"
+        }
+      },
+      "complete": "Thanks to your answer, the train is departing for the next station!\nHow about continuing by sharing your honest feelings\nand writing a heartfelt letter?",
+      "list": {
+        "label": "Answer Journey",
+        "desc": "You have answered N questions so far.\nShall we take a look at your journey of answers?",
+        "title": "Rainbow Bridge-Neomeo Train",
+        "caption": "This train goes from Earth to {{star}}."
+      },
+      "help": {
+        "first": {
+          "title": "Answer from the heart",
+          "desc": "Write answers to the daily questions.\nRevisit memories with {{name}} through 49 questions."
+        },
+        "second": {
+          "title": "Answers accumulate step by step",
+          "desc": "You can check your answers in the answer list.\nYour precious answers help the train carrying {{name}} depart."
+        },
+        "third": {
+          "title": "So we can arrive safely at {{star}}",
+          "desc": "To help the train carrying {{name}} arrive safely at {{star}},\nwhy not answer the questions with a warm heart?"
+        }
+      }
+    },
+    "diary": {
+      "diary": "Vent",
+      "title": "Share with the wind",
+      "desc": "Put here any feelings you haven't been able to tell anyone.",
+      "go": "Go Vent",
+      "write": {
+        "guide": "Feel free to share whatever you want to say, whatever you're thinking, any lingering feelings. Be honest about your feelings.",
+        "placeholder": "Please enter the content.",
+        "complete": {
+          "title": "Have you shared everything honestly?",
+          "desc": "The story you wrote will fly away into the sky."
+        }
+      },
+      "complete": "What you've shared has flown away into the sky.\nHope you spend today with a bit lighter heart.",
+      "help": {
+        "first": {
+          "title": "Don't keep it bottled up, let it out",
+          "desc": "Whatever you wanted to say or think, any lingering feelings you haven't expressed yet.\nFeel free to share them openly here."
+        },
+        "second": {
+          "title": "A bamboo forest whispering in the wind",
+          "desc": "The wind will carry your story into the sky.\nIt will disappear without a trace, so feel free to let it all out."
+        }
+      }
+    },
+    "letter": {
+      "letter": "Write a Letter",
+      "write": {
+        "placeholder": "Please enter the content."
+      },
+      "sealing": {
+        "label": "Choose a seal to close your letter."
+      },
+      "complete": "Thank you for writing the letter so sincerely!\nThe letter will be carefully delivered to {{name}} on the train.",
+      "help": {
+        "first": {
+          "title": "Express your sincerity anytime, anywhere",
+          "desc": "Whenever you think of your precious {{name}},\nwrite them a letter filled with your heartfelt feelings."
+        },
+        "second": {
+          "title": "Seal it carefully and deliver it",
+          "desc": "When you finish writing the letter, choose a sealing wax.\nWe'll seal your precious letter with the chosen wax."
+        },
+        "third": {
+          "title": "A letter sent into the sky",
+          "desc": "Your sealed letter will be sent to {{name}} on the train.\nShall we go write a letter to {{name}} now?"
+        }
+      }
+    },
+    "ending": {
+      "title": "We have safely arrived at {{star}}.",
+      "content": "While you were answering questions, the train carrying {{name}} arrived at {{star}}.\n{{name}} will stay here and wait for {{user}}.\nUntil the day you meet again, we hope you cherish the memories with {{name}}.",
+      "view": {
+        "view": "View All Answers So Far",
+        "arrive": "Arrived at {{star}}.",
+        "final": "Final Station",
+        "order": "Question #{{order}}"
+      }
+    },
+    "settings": {
+      "settings": "Settings",
+      "locale": {
+        "label": "Language",
+        "options": {
+          "ko": "한국어",
+          "en": "English",
+          "zh": "中文",
+          "ja": "日本語"
+        }
+      },
+      "profile": {
+        "label": "Change Profile",
+        "name": "User Title",
+        "pet": {
+          "name": "Pet Name",
+          "custom": "Custom Pet"
+        }
+      },
+      "noti": {
+        "label": "Notification Settings",
+        "question": {
+          "label": "New Question Alert",
+          "desc": "An alert will ring every day at 22:00!"
+        }
+      }
+    }
+  }
+}
