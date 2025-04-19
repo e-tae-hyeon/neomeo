@@ -111,7 +111,8 @@ const Paper = styled.View`
   right: 20px;
   bottom: 0px;
   left: 20px;
-  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
 `;
 
 const Main = styled.View`

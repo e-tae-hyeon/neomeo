@@ -8,6 +8,7 @@ import Btn from "@/src/components/Btn";
 import usePet from "@/src/features/me/hooks/usePet";
 import PetPreview from "@/src/features/pet/modules/PetPreview";
 import PetCustomManager from "@/src/features/pet/modules/PetCustomManager";
+import { ScrollView } from "react-native";
 
 function PetCustomScreen() {
   const { t } = useTranslation();
@@ -23,11 +24,13 @@ function PetCustomScreen() {
     <Screen>
       <Header.Arrow />
 
-      <Main>
-        <PetPreview />
+      <ScrollView>
+        <Main>
+          <PetPreview />
 
-        <PetCustomManager kind={pet.kind!} />
-      </Main>
+          <PetCustomManager kind={pet.kind!} />
+        </Main>
+      </ScrollView>
 
       <Footer>
         <Btn onPress={handleNext}>{t("common.action.next")}</Btn>

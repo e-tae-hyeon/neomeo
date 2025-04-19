@@ -10,7 +10,7 @@ function TabsLayout() {
   const theme = useTheme();
   const { bottom } = useSafeAreaInsets();
 
-  const HEIGHT = 54 + bottom;
+  const HEIGHT = bottom > 0 ? 54 + bottom : 64;
 
   return (
     <Tabs

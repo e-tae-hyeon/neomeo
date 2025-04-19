@@ -62,7 +62,7 @@ const Main = styled.View`
 
 const Body = styled.View`
   flex: 1;
-  padding-top: 50%;
+  padding-top: 32%;
 `;
 
 const Guide = styled(Typo.H4)`
