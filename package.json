@@ -1,7 +1,7 @@
 {
   "name": "neomeo",
   "main": "expo-router/entry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "prebuild": "expo prebuild --clean",
     "start": "NODE_ENV=development npx expo start",
