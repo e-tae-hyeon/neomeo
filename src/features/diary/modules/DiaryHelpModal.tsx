@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import { Modal } from "react-native";
 import PagerView from "react-native-pager-view";
 import styled, { useTheme } from "styled-components/native";
-import usePet from "../../me/hooks/usePet";
 import { IconX } from "@tabler/icons-react-native";
 import Btn from "@/src/components/Btn";
 import Animated, { FadeIn } from "react-native-reanimated";
@@ -17,7 +16,6 @@ function DiaryHelpModal() {
   const theme = useTheme();
   const { t } = useTranslation();
 
-  const { pet } = usePet();
   const isVisible = useDiaryStore((s) => s.isVisibleHelp);
   const close = useDiaryStore((s) => s.closeHelp);
 
@@ -52,7 +50,7 @@ function DiaryHelpModal() {
             <Page key={1}>
               <Head>
                 <Title>{t("diary.help.first.title")}</Title>
-                <Desc>{t("diary.help.first.desc", { name: pet.name })}</Desc>
+                <Desc>{t("diary.help.first.desc")}</Desc>
               </Head>
 
               <Image
@@ -65,7 +63,7 @@ function DiaryHelpModal() {
             <Page key={2}>
               <Head>
                 <Title>{t("diary.help.second.title")}</Title>
-                <Desc>{t("diary.help.second.desc", { name: pet.name })}</Desc>
+                <Desc>{t("diary.help.second.desc")}</Desc>
               </Head>
 
               <Full>

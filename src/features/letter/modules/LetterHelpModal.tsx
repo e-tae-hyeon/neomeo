@@ -12,10 +12,16 @@ import useLetterStore from "../stores/useLetterStore";
 import Animated, { FadeIn } from "react-native-reanimated";
 import { Image } from "expo-image";
 import Pet from "../../pet/modules/Pet";
+import { josa } from "es-hangul";
+import useSettingsStore from "../../settings/stores/useSettingsStore";
 
 function LetterHelpModal() {
   const theme = useTheme();
   const { t } = useTranslation();
+
+  const {
+    general: { locale },
+  } = useSettingsStore((s) => s.settings);
 
   const { pet } = usePet();
   const isVisible = useLetterStore((s) => s.isVisibleHelp);
@@ -52,7 +58,11 @@ function LetterHelpModal() {
             <Page key={1}>
               <Head>
                 <Title>{t("letter.help.first.title")}</Title>
-                <Desc>{t("letter.help.first.desc", { name: pet.name })}</Desc>
+                <Desc>
+                  {t("letter.help.first.desc", {
+                    name: locale === "ko" ? josa(pet.name, "이/가") : pet.name,
+                  })}
+                </Desc>
               </Head>
 
               <Image
@@ -65,7 +75,7 @@ function LetterHelpModal() {
             <Page key={2}>
               <Head>
                 <Title>{t("letter.help.second.title")}</Title>
-                <Desc>{t("letter.help.second.desc", { name: pet.name })}</Desc>
+                <Desc>{t("letter.help.second.desc")}</Desc>
               </Head>
 
               <Image
@@ -78,7 +88,11 @@ function LetterHelpModal() {
             <Page key={3}>
               <Head>
                 <Title>{t("letter.help.third.title")}</Title>
-                <Desc>{t("letter.help.third.desc", { name: pet.name })}</Desc>
+                <Desc>
+                  {t("letter.help.third.desc", {
+                    name: pet.name,
+                  })}
+                </Desc>
               </Head>
 
               <Full>

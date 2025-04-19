@@ -12,10 +12,16 @@ import Animated, { FadeIn } from "react-native-reanimated";
 import useQuestionStore from "../stores/useQuestionStore";
 import Pet from "../../pet/modules/Pet";
 import { Image } from "expo-image";
+import useSettingsStore from "../../settings/stores/useSettingsStore";
+import { josa } from "es-hangul";
 
 function QuestionHelpModal() {
   const theme = useTheme();
   const { t } = useTranslation();
+
+  const {
+    general: { locale },
+  } = useSettingsStore((s) => s.settings);
 
   const { pet } = usePet();
   const isVisible = useQuestionStore((s) => s.isVisibleHelp);
@@ -53,7 +59,11 @@ function QuestionHelpModal() {
             <Page key={1}>
               <Head>
                 <Title>{t("question.help.first.title")}</Title>
-                <Desc>{t("question.help.first.desc", { name: pet.name })}</Desc>
+                <Desc>
+                  {t("question.help.first.desc", {
+                    name: locale === "ko" ? josa(pet.name, "와/과") : pet.name,
+                  })}
+                </Desc>
               </Head>
 
               <Image
@@ -67,7 +77,9 @@ function QuestionHelpModal() {
               <Head>
                 <Title>{t("question.help.second.title")}</Title>
                 <Desc>
-                  {t("question.help.second.desc", { name: pet.name })}
+                  {t("question.help.second.desc", {
+                    name: locale === "ko" ? josa(pet.name, "이/가") : pet.name,
+                  })}
                 </Desc>
               </Head>
 
@@ -82,7 +94,10 @@ function QuestionHelpModal() {
               <Head>
                 <Title>{t("question.help.third.title", { star })}</Title>
                 <Desc>
-                  {t("question.help.third.desc", { name: pet.name, star })}
+                  {t("question.help.third.desc", {
+                    name: locale === "ko" ? josa(pet.name, "이/가") : pet.name,
+                    star,
+                  })}
                 </Desc>
               </Head>
 
